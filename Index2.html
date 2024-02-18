@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script>
+            var currentImg = 1;
+
+            function showImg(n) {
+                if (n > 4) {
+                    n = 1;
+                }
+                document.getElementById("bigimg").src = "image" + n + ".jpg";
+                document.getElementById("bigimg").style.borderColor = "red";
+
+                for (var i = 1; i <= 4; i++) {
+                    if (i == n) {
+                        document.getElementById("smallimg" + i).style.borderColor = "red";
+                    } else {
+                        document.getElementById("smallimg" + i).style.borderColor = "black";
+                    }
+                }
+            }
+
+            function nextImg() {
+                currentImg++;
+                if (currentImg > 4) {
+                    currentImg = 1;
+                }
+                showImg(currentImg);
+            }
+        </script>
+    </head>
+    <body>
+        <img id="bigimg" src="image1.jpg" border="5px" width="512" onclick="nextImg()"/><br>
+        <img id="smallimg1" src="image1.jpg" border="5px" width="161" onclick="showImg(1)"/>
+        <img id="smallimg2" src="image2.jpg" border="5px" width="161" onclick="showImg(2)"/>
+        <img id="smallimg3" src="image3.jpg" border="5px" width="161" onclick="showImg(3)"/>
+        <img id="smallimg4" src="image4.jpg" border="5px" width="161" onclick="showImg(4)"/>
+    </body>
+</html>

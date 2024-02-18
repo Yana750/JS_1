@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script>
+            var isHappy = 0;
+            var images = ["happy.jpg", "unhappy.jpg", "surprised.jpg", "angry.jpg", "sad.jpg"];
+            function changeImage(img) {
+                isHappy = (isHappy + 1) % images.length;
+                img.src = images[isHappy];
+                document.getElementById("imgname").value = images[isHappy];
+            }
+        </script>
+    </head>
+    <body>
+        <img id="img" onclick="changeImage(this)" src="happy.jpg" width="256"/>
+        <input type="text" id="imgname" readonly/>
+    </body>
+</html>
